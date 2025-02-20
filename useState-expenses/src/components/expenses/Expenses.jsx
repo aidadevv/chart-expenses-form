@@ -44,7 +44,7 @@ function Expenses(props) {
         onSelect={selectYearHandler}
         selectedYear={selectedYear}
       />
-      <ExpensesChart expenses = {props.expenses}/>  
+      <ExpensesChart expenses = {filteredExpenses}   />  
       {expensesContent} 
     </Card>
   );

@@ -16,14 +16,17 @@ function ExpensesChart(props) {
     { label: "Nov", value: 0 },
     { label: "Dec", value: 0 },
   ];
-  for (const expense of props.expenses) {
-    const expenseMonth  = expense.date.getMonth()
-    chartDataPoints[expenseMonth].value += expense.price
+
+  for (const expense of props.expenses) { // Используем переданные расходы без доп. фильтрации
+    const expenseMonth = expense.date.getMonth();
+    chartDataPoints[expenseMonth].value += expense.price;
   }
-  
-  return <div>
-    <Chart dataPoints = {chartDataPoints}/>
-  </div>;
+
+  return (
+    <div>
+      <Chart dataPoints={chartDataPoints} />
+    </div>
+  );
 }
 
 export default ExpensesChart;
